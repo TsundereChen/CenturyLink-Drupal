@@ -1,0 +1,13 @@
+web:
+    build: .
+    ports:
+        - "8080:80"
+    links:
+        - db
+
+db:
+    image: centurylink/postgresql
+    environment:
+        DB: "test_db"
+        PASS: "123456"
+        USER: "admin"
